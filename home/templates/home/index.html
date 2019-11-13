@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>شمال پوز | صفحه ی نخست</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/static/img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body style="background-color:#383838">
+    <!-- ##### Preloader ##### -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="circle-preloader">
+            <img src="/static/img/logow.png" alt="">
+            <div class="foode-preloader">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-header-content d-flex align-items-center justify-content-between" >
+                            <!-- Search Form 
+                            <div class="search-form">
+                                <form action="#" method="get">
+                                    <input type="search" name="search" class="form-control" placeholder="Search and hit enter...">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+
+                             Social Button -->
+                            <div class="top-social-info">
+                                
+                                <a href="http://www.instagram.com/shomal_pos/"><i class="fa fa-instagram" aria-hidden="true"></i> instagram</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo Area -->
+       
+
+        <!-- Navbar Area -->
+        <div class="foode-main-menu">
+            <div class="classy-nav-container breakpoint-off" >
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar" id="foodeNav">
+
+                        <!-- Nav brand -->
+                        <a href="/" class="nav-brand"></a>                         <!-- <img src="/static/img/logow.png" width="70px" alt="">-->
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+								  {% if user.is_authenticated %}
+									<li><a href="/logout/">خروج از حساب</a></li>
+								  {% else %}
+									
+									<li><a href="/signup/">ثبت نام</a></li>
+								  {% endif %}
+                                    <li><a href="/">خانه</a></li>
+                                    <li><a href="#">بخش ها</a>
+                                        <ul class="dropdown">
+                                            
+                                            <li><a href="/POS-device/">POS دستگاه</a></li>
+                                            <li><a href="/videos/">ویدئو های آموزشی</a></li>
+                                            <li><a href="/essay/">مقالات علمی</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">گروه بندی</a>
+                                        <div class="megamenu">
+                                            
+                                            <ul class="single-mega cn-col-4">
+                                                <li><a href="#">فروشگاه آنلاین</a></li>
+                                                <li><a href="#">به زودی</a></li>
+                                                
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li><a href="#">ویدئو های آموزشی</a></li>
+												{% for vid in video %}
+													<li><a href="/videos/{{vid.category_slug}}">- {{ vid.video_category }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+											
+											<ul class="single-mega cn-col-4">
+                                                <li><a href="#">POS دستگاه های</a></li>
+												{% for pos in POS_cat %}
+													<li><a href="POS-device/{{pos.category_slug}}">- {{ pos.POS_category }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+											<ul class="single-mega cn-col-4">
+                                                <li><a href="#">مقالات علمی</a></li>
+												{% for es in essay %}
+													<li><a href="essay/{{es.category_slug}}">- {{ es.essay_category }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                            
+                                        </div>
+                                    </li>
+                                    <li><a href="/POS-device/">POS دستگاه</a></li>
+                                    <li><a href="/videos/">ویدئو های آموزشی</a></li>
+                                    <li><a href="/essay/">مقالات علمی</a></li>
+									
+									<li><a href="/contact/">تماس</a></li>
+                                </ul>
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+	
+	<br></br>
+	<div class="logo-area text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Nav brand -->
+                        <a href="/" class="nav-brand"><img src="/static/img/logob.png" width="300px" /></a>
+						<br></br>
+						<center><h4 style='color:white'>فروشگاه انواع دستگاه پوز و ارائه دهنده ی مقالات علمی و ویدئو های آموزشی در زمینه های مختلف<h4></center>
+                    </div>
+					
+                </div>
+            </div>
+        </div>
+	<br></br>
+	
+	<br></br>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-post-slides owl-carousel">
+
+            {% for pos in POS %}
+				<div class="single-hero-post">
+					<!-- Post Image -->
+					<div class="slide-img bg-img" style="background-image: url(/media/{{ pos.POS_Image }});"></div>
+					<!-- Post Content -->
+					<div class="hero-slides-content">
+						
+						<a href="/POS-device/{{ pos.category_slug }}" class="post-title">
+							
+						</a>
+					</div>
+				</div>
+			{% endfor %}
+
+            
+            <!-- Single Hero Post -->
+            {% for vid in video %}
+				<div class="single-hero-post">
+					<!-- Post Image -->
+					<div class="slide-img bg-img" style="background-image: url(/media/{{ vid.category_Image }});"></div>
+					<!-- Post Content -->
+					<div class="hero-slides-content">
+						
+						<a href="/videos/{{ vid.category_slug }}" class="post-title">
+							<h4>{{vid.category_summary}}</h4>
+						</a>
+					</div>
+				</div>
+			{% endfor %}
+
+            <!-- Single Hero Post -->
+            {% for es in essay %}
+				<div class="single-hero-post">
+					<!-- Post Image -->
+					<div class="slide-img bg-img" style="background-image: url(/media/{{ es.category_Image }});"></div>
+					<!-- Post Content -->
+					<div class="hero-slides-content">
+						
+						<a href="/essay/{{ es.category_slug }}" class="post-title">
+							<h4>{{es.category_summary}}</h4>
+						</a>
+					</div>
+				</div>
+			{% endfor %}
+
+        </div>
+    </section>
+    <!-- ##### Hero Area End ##### -->
+
+    <!-- ##### Blog Content Area Start ##### -->
+    <section class="blog-content-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                <!-- Featured Post Area -->
+                <div class="col-12">
+                    <div class="featured-post-area">
+                        <div id="featured-post-slides" class="carousel slide d-flex flex-wrap" data-ride="carousel">
+
+                            <div class="carousel-inner">
+							
+								{% for pos in POS_det %}
+
+									<div class="carousel-item active bg-img" style="background-image: url(/media/{{pos.POS_Image}})">
+										<!-- Featured Post Content -->
+										<div class="featured-post-content">
+											<p>{{pos.POS_brand}}</p>
+											<a href="/POS-device/{{pos.POS_slug}}" class="post-title">
+												<h2>{{pos.POS_description|safe}}</h2>
+											</a>
+										</div>
+									</div>
+								{% endfor %}
+
+                                
+                            </div>
+
+                            <ol class="carousel-indicators">
+								
+							{% for pos in POS_det %}
+                                <li data-target="#featured-post-slides" data-slide-to="2" class="active">
+                                    <h2>{{pos}}</h2>
+                                    <a href="#" class="post-title">
+                                        <h5>{{pos.POS_description|safe}}</h5>
+                                    </a>
+                                </li>
+							{% endfor %}
+							
+                               
+                            </ol>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+
+               
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Footer Curve Line -->
+                    <img class="footer-curve" src="img/core-img/foo-curve.png" alt="">
+                    <!-- Footer Social Info -->
+                    
+                    <!-- Footer Curve Line -->
+                    <img class="footer-curve" src="img/core-img/foo-curve.png" alt="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="copywrite-text">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="/static/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="/static/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/static/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="/static/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="/static/js/active.js"></script>
+</body>
+
+</html>

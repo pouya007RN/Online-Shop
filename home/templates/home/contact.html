@@ -1,0 +1,55 @@
+<head>
+<title> تماس با ما</title>
+
+{% load static %}
+	<meta charset="utf-8" />
+	
+	<link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+	 
+    <link rel="stylesheet" href="/static/CSSM/materialize.min.css">
+
+	<script src="/static/JSM/header.js"></script>
+</head>
+	
+{% block content %}
+ <body style="background-color:#383838">
+  <br></br>
+  <br></br>
+  
+  <center>
+   
+	<div class="container">
+	<div class="card z-depth-5" style="background-color:#e8e8e8">
+	<br></br>
+	 <div class="container">
+	 <a class="btn" href="/">بازگشت به صفحه ی نخست</a>
+	 <h3><strong>پیام خود را ثبت کنید</strong></h3>
+	 <div class="card z-depth-5" style="background-color:#e8e8e8">
+	 
+	 <div class="container">
+	  
+	  <br></br>
+		
+		<form method="post">
+			  
+				{% csrf_token %}
+				{{ Con_form.as_p }}
+				<button class="btn waves-effect waves-light" style="background-color:#383838" type="submit" name="action" onclick="M.toast({html: 'پیام شما برای ادمین ارسال شد', completeCallback: function(){alert('پیام شما با موفقیت ارسال شد.')}})"></a>
+			ارسال پیام
+
+				
+				</button>
+				<p>در صورت موفقیت در ارسال پیام به صفحه ی نخست باز خواهید گشت</p>
+				
+		</form>
+	 </div>
+	 <br></br>
+	</div>
+  </div>
+  </div>
+  </div>
+  </center>
+  
+  <br></br>
+ </body>
+{% endblock %}
