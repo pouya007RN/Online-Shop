@@ -1,0 +1,17 @@
+{% extends "POS/base.html" %}
+{% load static %}
+
+{% block content %}
+	<div class="container">
+	<h1 align="right">POS فرم درخواست دستگاه </h1>
+	
+	<h4 align="right">پس از تکمیل فرم زیر با شما تماس گرفته خواهد شد</h4>
+	
+		
+	<form action="." method="post" class="order_form">
+		{{ form.as_p }}
+		<p><input class="btn red darken-4" type="submit" value="ثبت درخواست" ></p>
+		{% csrf_token %}
+	</form>
+	</div>
+{% endblock %}

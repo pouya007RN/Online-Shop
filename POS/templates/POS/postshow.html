@@ -1,0 +1,53 @@
+{% extends 'POS/base.html' %}
+
+{% block content %}
+  
+    <div class="row">
+	  <div class="container">
+        <div class="col s12, m8, l8">
+				<br></br>
+			
+				<img src="/media/{{posts.POS_Image}}" height="400px" >
+				<h3>{{posts.POS_brand}}</h3>
+			
+			
+			
+            <p style="font-size:70%">Published {{posts.date}}</p>
+            {{posts.POS_description|safe}}
+			<h4>قیمت: {{posts.POS_price}}</h4>
+			
+			
+			<a <a class="btn red darken-4" target='_blank' title='درخواست' href='/POS-device/order/'>فرم درخواست</a>
+			
+			
+        </div>
+		
+		
+	  </div>
+	  
+
+        <div class="col s12 m4 l4" >
+            <ul class="collapsible popout" >
+                {% for tutorial in sidebar %}
+                    {% if forloop.counter0 == this_tutorial_idx %}
+                        <li class="active">
+                            <div class="collapsible-header">{{tutorial.POS_brand}}<br>(شما در این بخش هستید)</br></div>
+                        </li>
+                    {% else %}
+                        <li>
+                            <div class="collapsible-header">{{tutorial.POS_brand}}</div>
+                            <div class="collapsible-body">
+                                <p><a href="{{tutorial.POS_slug}}"><button class="btn waves-effect waves-light right-align" style="background-color:yellow; color:black">Go</button></a></p>
+
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+	
+
+    </div>
+	
+  
+{% endblock %}

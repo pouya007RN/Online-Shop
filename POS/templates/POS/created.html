@@ -1,0 +1,16 @@
+{% extends "POS/base.html" %}
+
+{% load static %}
+
+{% block title %}Thank You{% endblock %}
+
+{% block content %}
+	<center>
+	<h2> از اینکه ما را انتخاب کردید سپاسگزاریم</h2>
+	<br/>
+	<br/>
+	<h5> درخواست شما با موفقیت ثبت شد و به زودی با شما تماس گرفته خواهد شد</h5>
+	<h4>شماره ی پیگیری شما: <strong>{{ order.id }}</strong></h4>
+	
+	</center>
+{% endblock %}
