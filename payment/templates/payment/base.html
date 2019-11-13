@@ -1,0 +1,48 @@
+
+
+<head>
+	{% load static %}
+	<meta charset="utf-8" />
+	<title>{% block title %}My shop{% endblock %}</title>
+	<link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+	 
+    <link rel="stylesheet" href="/static/CSS/materialize.min.css">
+
+	<script src="/static/JS/header.js"></script>
+    
+</head>
+<body>
+
+	<nav style="background-color:#50806f"><a href="/" class="brand-logo">My shop</a></nav>
+	<nav style="background-color:#95bdae">
+
+          
+	
+	<div id="subheader">
+		<div class="cart">
+			{% with total_items=cart|length %}
+				{% if cart|length > 0 %}
+					your cart:
+					<a class="btn" href="{% url 'cart:cart_detail' %}">
+						{{ total_items }} item{{ total_items|pluralize }}, ${{cart.get_total }}
+					</a>
+				{% else %}
+				<a class="btn" href="{% url 'cart:cart_detail' %}">
+					Take a look at your cart
+				</a>
+				{% endif %}
+			{% endwith %}
+		</div>
+	</div>
+	</nav>
+	<div id="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+	
+	
+	
+	
+	
+</body>
+<script>M.AutoInit();</script>
