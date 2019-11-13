@@ -1,0 +1,74 @@
+
+{% extends "products/base.html" %}
+{% load static %}
+
+{% block title %}
+	{% if category %}{{ category.name }}{% else %}Products{% endif %}
+{% endblock %}
+
+{% block content %}
+  
+	
+    
+		<ul id="slide-out" class="sidenav" style="background-color:#b8d1c8">
+			<li {% if not category %}class="selected"{% endif %}>
+				<a href="{% url 'shop:product_list' %}">All</a>
+			</li>
+		{% for c in categories %}
+			<li {% if category.slug == c.slug %}class="selected"{% endif %}>
+				<a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+  
+ 
+  <a href="#" data-target="slide-out" class="sidenav-trigger btn"><i class="material-icons">categories</i></a>
+  
+  
+  
+  
+  
+	
+		
+	
+	
+  <div class="row">
+	<div class="container">
+	{% for product in products %}
+    <div class="col s12 m6 l4">
+	<div class="card-panel hoverable" style="background-color:#cae8ce">
+	
+		<br/>
+      <div class="card">
+        <div class="card-image">
+		
+          <a href="{{ product.get_absolute_url }}">
+					<img src="{% if product.image %}{{ product.image.url }}" {% endif %}>
+				</a>
+          <span class="card-title"></span>
+        </div>
+        <div class="card-content" style="background-color:#aec2ba">
+		  <p>{{ product.name }}</p>
+          <p>${{ product.price }}</p>
+        </div>
+        <div class="card-action" style="background-color:#aec2ba">
+          <a href="{{ product.get_absolute_url }}">more details</a>
+        </div>
+      </div>
+	  
+	  </div>
+    </div>
+	{% endfor %}
+  </div>
+  </div>  
+	
+	
+	
+	
+	
+	
+{% endblock %}
+
+
+
+
