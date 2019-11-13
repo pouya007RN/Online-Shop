@@ -1,0 +1,58 @@
+{% extends 'video/base.html' %}
+	
+	
+{% block content %}
+
+
+{{slug}}
+
+  
+  <ul id="slide-out" class="sidenav" style="background-color:#d9e9ff">
+  
+	<br></br>
+    <center><strong>لیست ویدئو ها</strong></center>
+	
+	{% for side in categories %}
+		<br/>
+		<li><div class="divider black" ></div></li>
+		<li><a href="{{side.category_slug}}">{{side.video_category}}</a></li>
+		
+	{% endfor %}
+   
+    <li><div class="divider black" ></div></li>
+    
+  </ul>
+  
+  <a href="#" data-target="slide-out" class="sidenav-trigger btn" style="background-color:#003F72"><i class="material-icons">menu</i></a>
+
+
+
+
+
+
+  <div class="row">
+  <div class="container">
+  {% for tut, partone in part_ones.items %}
+    <div class="col s12 m6 l4">
+	 <a href="{{partone}}">
+	 <div class="card hoverable">
+	 <div class="card-image">
+          <img src="/media/{{ tut.video_Image }}">
+          
+        </div>
+      <div class="card" style="background-color:#003F72">
+        <div class="card-content white-text">
+          <div class="card-title">{{tut.video_title}}</div>
+			  
+		  <p>{{tut.video_summary}}</p>
+        </div>
+			
+      </div>
+	  </div>
+	  </a>
+    </div>
+	{% endfor %}
+	</div>
+  </div>
+	
+{% endblock %}
