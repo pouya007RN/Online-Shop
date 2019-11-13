@@ -1,0 +1,20 @@
+{% extends 'essay/base.html' %}
+
+{% block content %}
+	<center>
+	
+		<h3><strong>تبریک! عملیات خرید و ثبت اطلاعات شما با موفقیت انجام شد.<strong></h3>
+		<h4>شماره پیگیری شما: <strong>{{ order.id }}</strong></h4>
+		<br></br>
+		<strong>برای ورود به صفحه ی دانلود بر روی لینک زیر کلیک کنید</strong>
+		
+		<br></br>
+		
+		<p><a class="btn" href="/essay/{{ url }}/link/{{link}}">دانلود</a></p>
+		
+		
+	<br></br>
+		
+		<br></br>
+	</center>
+{% endblock %}

@@ -1,0 +1,103 @@
+
+
+<head>
+	{% load static %}
+	<meta charset="utf-8" />
+	<title>{% block title %}My shop{% endblock %}</title>
+	<link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+	 
+    <link rel="stylesheet" href="/static/CSS/materialize.min.css">
+
+	<script src="/static/JS/header.js"></script>
+	
+	
+    
+</head>
+<body style="background-color:#c9c9c9">
+	<div class="navbar-fixed">
+	<nav style="background-color:#1a1f36"><a href="/" class="brand-logo"><img src="/static/LOGOB/logo.png" width="150"/></a>
+	<div class="nav-wrapper">
+      
+	  
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	  
+	  
+			
+			
+			
+			
+			
+			<li><a href="/contact/">تماس</a></li>
+			<li><a href="/signup/">ثبت نام</a></li>
+			<li><a href="#">فروشگاه آنلاین(به زودی)</a></li>
+			<li><a href="/essay/">مقالات علمی</a></li>
+			<li><a href="/videos/">ویدئو های آموزشی</a></li>
+			<li><a href="/POS-device/">POS دستگاه های</a></li>
+			<li><a href="/">خانه</a></li>
+			
+			
+			
+			
+		
+      </ul> 
+    </div>
+	</nav>
+	</div>
+	<div class="navbar-fixed">
+	<nav style="background-color:#3f3c4f">
+		
+		<center>در این بخش می توانید مقالات مورد نظر خود را دریافت کنید</center>
+
+         
+	</nav>
+	
+	
+
+	
+	</div>
+	
+	
+	
+	
+	
+	
+	<div id="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+	
+	
+	<footer class="page-footer" style="background-color:#1a1f36">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">آدرس فروشگاه</h5>
+				<br></br>
+                <p class="grey-text text-lighten-4">مازندران - چالوس - پاساژ آدینه طبقه ی همکف فروشگاه شمال پوز</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">ارتباط با ما</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="/contact/">تماس</a></li>
+				  <p></p>
+                  <li><a class="grey-text text-lighten-3" href="http://www.instagram.com/shomal_pos/">صفحه ی اینستاگرام</a></li>
+				  <p></p>
+                  <li><a class="grey-text text-lighten-3">آدرس کانال تلگرام</a></li>
+				  <li><a class="grey-text text-lighten-3">@shomal_pos</a></li>
+				  <p></p>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="/">صفحه ی نخست</a>
+            </div>
+          </div>
+        </footer>
+	
+	
+</body>
+<script>M.AutoInit();</script>

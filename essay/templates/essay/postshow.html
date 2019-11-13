@@ -1,0 +1,106 @@
+{% extends 'essay/base.html' %}
+
+{% block content %}
+
+  
+    <div class="row">
+	  <div class="container">
+        <div class="col s12, m8, l8">
+            <h3>{{posts.essay_title}}</h3>
+			<div class="responsive-img" >
+				<img src="/media/{{posts.essay_demo}}" />
+			</div>
+			
+            <p style="font-size:70%">Published {{posts.date}}</p>
+            <P>{{posts.essay_description|safe}}</p>
+			<strong>مگابایت  {{posts.essay_size}}</strong>
+			<h4>قیمت: تومان {{posts.essay_price}}</h4>
+			<a class="btn" target='_blank' title='پرداخت آنلاین' href='{{ posts.zarinpal_link }}' style="background-color:#1a1f36"> پرداخت آنلاین از درگاه زرین پال</a>
+			
+			
+			
+        </div>
+		
+		
+	  </div>
+	  
+
+        <div class="col s12 m4 l4" >
+            <ul class="collapsible popout" >
+                {% for tutorial in sidebar %}
+                    {% if forloop.counter0 == this_tutorial_idx %}
+                        <li class="active">
+                            <div class="collapsible-header">{{tutorial.essay_sidebar}}<br>(شما در این بخش هستید)</br></div>
+                        </li>
+                    {% else %}
+                        <li>
+                            <div class="collapsible-header">{{tutorial.essay_sidebar}}</div>
+                            <div class="collapsible-body">
+                                <p><a href="{{tutorial.essay_slug}}"><button class="btn waves-effect waves-light right-align" style="background-color:#1a1f36; color:black">Go</button></a></p>
+
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+	
+
+    </div>
+		
+		
+	
+	
+	     <br></br>
+		 <br></br>
+		 
+	  <div class="main-comment-section">
+	  
+	  <div class="container">
+	  
+	  <center>
+	  <h4>نظرات کاربران</h4>
+	  <h1>____________________________________________</h1></center>
+	  
+	  {% if user.is_authenticated %}
+	   <form method="post">
+			{% csrf_token %}
+			{{ comment_form.as_p }}
+			
+			<button class="btn waves-effect waves-light" type="submit" name="action" style="background-color:#1a1f36" onclick="M.toast({html: 'نظر شما با موفقیت ثبت شد'})">ثبت دیدگاه</button>
+		</form>
+	  
+		{{ comments.count }} Comment{{ comments|pluralize }}
+		{% for cm in comments %}
+			<div class="divider"></div>
+				<div class="section" align="right">
+				<h5>{{cm.نام}}</h5>
+				<p style="font-size:70%">{{cm.timestamp}}</p>
+				<p>{{cm.دیدگاه|capfirst}}</p>
+			</div>
+			
+			
+	  
+	    {% endfor %}
+		
+		
+		
+		
+	  {% else %}
+	  
+	  <center><h4> <برای مشاهده و ثبت دیدگاه های خود ابتدا ثبت نام کنید></h4>
+	  
+	  <a class="btn" style="background-color:#1a1f36" href="/signup/">ثبت نام</a></center>
+	  <br></br>
+	  
+	  {% endif %}
+		
+		
+		
+		
+	
+	
+  </div>
+  </div>
+  
+{% endblock %}

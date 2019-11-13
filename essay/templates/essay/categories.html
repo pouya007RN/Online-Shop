@@ -1,0 +1,35 @@
+{% extends 'essay/base.html' %}
+	
+	
+{% block content %}
+  <div class="row" >
+   <div class="container">
+   
+    {% for cat in categories %}
+		<br></br>
+		<div class="col s12 m6 l4" >
+		<div class="card" >
+		<div class="card hoverable" >
+		<div class="card-image">
+          <img src="/media/{{ cat.category_Image }}">
+          
+        </div>
+		 <a href="{{cat.category_slug}}">
+		 
+		  <div class="card" style="background-color:#1a1f36" >
+			<div class="card-content white-text">
+			  <div class="card-title"><strong>{{cat.essay_category}}</strong></div>
+				  
+				  <p>{{cat.category_summary}}</p>
+			</div>
+				
+		  </div>
+		  </div>
+		  </a>
+		  </div>
+		</div>
+	{% endfor %}
+	</div>
+  </div>
+	
+{% endblock %}

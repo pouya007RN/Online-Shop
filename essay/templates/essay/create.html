@@ -1,0 +1,21 @@
+{% extends "essay/base.html" %}
+{% load static %}
+
+{% block content %}
+	<div class="container">
+	  <center>
+		<h5>برای دریافت فایل مورد نظر ابتدا فرم زیر را تکمیل کنید</h5>
+		<br/>
+		<h6>این فرم برای ثبت درخواست شما می باشد که در صورت وجود اشکال در لینک</h6>
+		<h6>بتوانیم برای رفع مشکل شما اقدام کنیم</h6>
+	  </center>
+	
+	<form action="." method="post" class="order_form">
+		{{ form.as_p }}
+		<center>
+		<p><input class="btn" type="submit" value="ثبت و ورود به صفحه دانلود" ></p>
+		</center>
+		{% csrf_token %}
+	</form>
+	</div>
+{% endblock %}
