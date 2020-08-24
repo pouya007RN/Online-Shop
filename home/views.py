@@ -45,10 +45,9 @@ def loginPage(request):
             login(request, user)
             global is_authenticated
             is_authenticated = True
-            context = {'form': form,
-                       'error': 'The login has been successful'}
 
-            return render(request, 'home/index.html', context)
+
+            return redirect('homepage')
         else:
             context = {'form': form,
                        'error': 'The username and password combination is incorrect'}

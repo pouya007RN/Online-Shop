@@ -63,7 +63,7 @@ class Order(models.Model):
     email       = models.EmailField()
     phone_num   = models.CharField(max_length=15, default='09')
     city        = models.CharField(max_length=100)
-    نام_دستگاه  = models.OneToOneField(POSDetail,default=1,on_delete=models.SET_DEFAULT)
+    نام_دستگاه  = models.ForeignKey(POSDetail, default=1,on_delete=models.SET_DEFAULT)
     created     = models.DateTimeField(auto_now_add=True)
     paid        = models.BooleanField(default=False)
 

@@ -104,36 +104,7 @@
                                             
                                         </ul>
                                     </li>
-                                    <li><a href="#">گروه بندی</a>
-                                        <div class="megamenu">
-                                            
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">فروشگاه آنلاین</a></li>
-                                                <li><a href="#">به زودی</a></li>
-                                                
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">ویدئو های آموزشی</a></li>
-												{% for vid in video %}
-													<li><a href="/videos/{{vid.category_slug}}">- {{ vid.video_category }}</a></li>
-                                                {% endfor %}
-                                            </ul>
-											
-											<ul class="single-mega cn-col-4">
-                                                <li><a href="#">POS دستگاه های</a></li>
-												{% for pos in POS_cat %}
-													<li><a href="POS-device/{{pos.category_slug}}">- {{ pos.POS_category }}</a></li>
-                                                {% endfor %}
-                                            </ul>
-											<ul class="single-mega cn-col-4">
-                                                <li><a href="#">مقالات علمی</a></li>
-												{% for es in essay %}
-													<li><a href="essay/{{es.category_slug}}">- {{ es.essay_category }}</a></li>
-                                                {% endfor %}
-                                            </ul>
-                                            
-                                        </div>
-                                    </li>
+
                                     <li><a href="/POS-device/">POS دستگاه</a></li>
                                     <li><a href="/videos/">ویدئو های آموزشی</a></li>
                                     <li><a href="/essay/">مقالات علمی</a></li>

@@ -69,12 +69,9 @@ def order_create(request):
 
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
+
         if form.is_valid():
             order = form.save()
-
-            order_created.delay(order.id)
-            Order.paid = True
-
             return render(request, 'POS/created.html', {'order': order})
 
     else:
