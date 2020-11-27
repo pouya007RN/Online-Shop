@@ -3,7 +3,6 @@ from .models import POSCollection,POSCategory,POSDetail, Order
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import OrderCreateForm
-from .tasks import order_created
 from video.views import download_link
 from essay.views import download_link_es
 

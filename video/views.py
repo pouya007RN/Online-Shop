@@ -4,7 +4,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from random import randint
 from .forms import OrderCreateForm, CommentForm
-from .tasks import order_created
+
 #from essay.views import download_link_es
 
 
@@ -134,7 +134,6 @@ def order_create(request):
         if form.is_valid():
             order = form.save()
 
-            order_created.delay(order.id)
             Order.paid = True
 
             return render(request, 'video/result.html', {'order': order,
